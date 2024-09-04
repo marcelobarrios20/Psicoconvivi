@@ -1,0 +1,716 @@
+/* Reseteando CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Logo */
+.logo {
+  display: flex;
+  height: 50px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/*Navbar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ebd983;
+  color: rgb(63, 69, 67);
+}
+
+.logo h1 {
+  font-size: 24px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(10, 9, 9);
+  font-size: 16px;
+}
+
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px 0;
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mostrar el submenú al pasar el ratón */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    text-align: left;
+  }
+
+  nav ul li a:hover {
+    background-color: #45a049;
+  }
+}
+
+/*Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .social-media {
+    margin-top: 10px;
+  }
+}
+
+/*Profile */
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f7f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.profile-text {
+  max-width: 600px;
+  margin-left: 20px;
+}
+
+.profile-text h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.profile-text p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/*Cards index*/
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 150px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  color: #ff6f00;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/*containerhablamos*/
+.containerhablamos {
+  text-align: center;
+  background-color: #efccdb;
+  padding: 15px;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #a8c8ff;
+  color: rgb(249, 245, 245);
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #88a9ff;
+}
+
+/* En que areas te puedo ayudar*/
+.areasayuda {
+  font-size: 28px;
+  margin: 20px 0;
+  text-align: center; /* Centra el texto del título */
+  color: #333;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.grid-item h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.grid-item p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #a8c8ff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #88a9ff;
+}
+
+/*Contacto*/
+.contact-container {
+  display: flex;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  width: 100%;
+}
+
+.contact-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-right: 20px;
+  border-right: 2px solid #ddd;
+}
+
+.contact-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.contact-info h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.contact-btn {
+  background-color: #ff8a65;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.contact-btn:hover {
+  background-color: #ff7043;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.social-icons a {
+  margin: 0 5px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-form {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+.submit-btn {
+  background-color: #26c6da;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #00acc1;
+}
+
+/*Sobre mi*/
+.carousel-item img {
+  max-height: 500px; 
+  object-fit: contain; 
+  object-position: center; 
+  width: 100%; 
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black; /* Cambia el color de fondo de las flechas a negro */
+  background-image: none; /* Elimina la imagen por defecto de Bootstrap para aplicar el color */
+}
+
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after {
+  content: '';
+  width: 30px; /* Ajusta el tamaño de la flecha */
+  height: 30px; /* Ajusta el tamaño de la flecha */
+  border: solid black; /* Cambia el color de la flecha a negro */
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+}
+
+
+
+
+.containersobremi {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgb(246, 246, 241);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mi-camino,
+.mi-enfoque {
+  margin-bottom: 40px;
+}
+
+
+
+
+
+
+/*Servicios*/
+
+.service-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0faf5; /* Color de fondo suave */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.service-content {
+  width: 60%;
+}
+
+.service-content h2 {
+  font-size: 2rem;
+  color: #000;
+}
+
+.service-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.service-image {
+  width: 35%;
+  text-align: right;
+}
+
+.service-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.quote-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff; /* Fondo blanco */
+}
+
+.quote-section h1 {
+  font-size: 2.5rem;
+  color: #8b5a57; /* Color marrón suave */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.underline-text {
+  display: inline-block;
+  position: relative;
+}
+
+.underline-text::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #8b5a57;
+  left: 0;
+  bottom: -5px;
+  border-radius: 2px;
+}
+
+.quote-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.benefits-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #fde3d9; /* Fondo color melocotón claro */
+}
+
+.benefits-content {
+  width: 60%;
+  padding-right: 20px;
+}
+
+.benefits-content h1 {
+  font-size: 2.2rem;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.benefits-list h2 {
+  font-size: 1.8rem;
+  color: #000;
+  margin-top: 20px;
+}
+
+.benefits-list p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.benefits-image-container {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end; /* Alinea el contenido a la derecha */
+}
+
+.benefits-image {
+  width: 100%;
+}
+
+.benefits-image img {
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border: 5px solid #fde3d9; /* Borde color melocotón claro */
+  width: 100%; /* Ajuste de ancho completo */
+  max-width: 400px; /* Ajuste de ancho máximo */
+  margin: 20px auto; /* Centrado y margen */
+  display: block; /* Asegura que se trate como un bloque */
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #8b5a57; /* Color marrón suave */
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  text-align: center;
+  align-self: flex-start; /* Alinea el botón a la izquierda dentro de su contenedor */
+  margin-top: auto; /* Empuja el botón hacia el final del contenedor */
+}
+
+.contact-button:hover {
+  background-color: #a67f7a; /* Color marrón más claro al hacer hover */
+}
+
+.tcc-phases-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px;
+  background-color: #f9f9f9; /* Fondo claro */
+}
+
+.tcc-phase {
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+}
+
+.phase-icon {
+  font-size: 3rem;
+  color: #8b5a57; /* Color marrón suave */
+  margin-bottom: 15px;
+}
+
+.tcc-phase h3 {
+  font-size: 1.8rem;
+  color: #8b5a57; /* Color marrón suave */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.tcc-phase p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/*Contacto*/
+
+.map-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.map-container iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.whatsapp-container {
+  display: flex;
+  align-items: center;
+}
+
+.whatsapp-container span {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: #333;
+}
+
+.whatsapp-fixed-container {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.whatsapp-fixed-container span {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  color: #333;
+}
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #25d366;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.whatsapp-button img {
+  width: 24px;
+  height: 24px;
+}
