@@ -5,10 +5,26 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 body {
   font-family: "Lora", serif; /* Fuente principal para texto */
   line-height: 1.6;
-  margin-top: 80px;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700; /* Puedes ajustar el peso de la fuente según lo necesites */
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400; /* Puedes ajustar el peso de la fuente según lo necesites */
 }
 
 header {
@@ -22,12 +38,11 @@ header {
   left: 0;
   width: 100%; /* Asegura que ocupe todo el ancho */
   z-index: 1000;
-  background: linear-gradient(90deg, #aed8e6, #a8d5ba);
-  background-color: #aed8e6;
+  background: linear-gradient(90deg, #ffffff, #dcdea3);
+  background-color: #c1ae38;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #ddd;
 }
-
 
 header a {
   color: #333;
@@ -36,13 +51,12 @@ header a {
 }
 
 header a:hover {
-  color: #8b5a57; /* Cambia el color al pasar el cursor */
+  color: #eae28b; /* Cambia el color al pasar el cursor */
 }
 
-
 header h1 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   font-size: 24px;
 }
 
@@ -53,7 +67,7 @@ header h1 {
 }
 
 .logo img {
-  max-height: 50px;
+  max-height: 80px;
 }
 
 .menu-toggle {
@@ -115,7 +129,7 @@ header h1 {
     top: 60px;
     left: 0;
     width: 100%;
-    background-color: #aed8e6;
+    background-color: #f2f4f5;
     padding: 10px;
   }
 
@@ -139,7 +153,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #ebd983;
+  background-color: #c9b138;
   color: rgb(63, 69, 67);
 }
 
@@ -201,51 +215,125 @@ nav ul li a {
 }
 
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  nav ul li a {
+  .menu-icon {
     display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #aed8e6;
-    text-align: left;
   }
 
-  nav ul li a:hover {
-    background-color: #aed8e6;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #ffffff, #dcdea3);
+    background-color: #c1ae38;
+    padding: 10px;
+  }
+
+  .menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin-bottom: 10px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+/* Profile */
+
+.profile-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f7f7df;
+  margin-top: 80px;
+}
+
+.profile-image {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.profile-image img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.profile-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.profile-text h1 {
+  font-family: "Shafarik", system-ui;
+  font-size: 64px; /* Ajusta según el tamaño exacto */
+  font-weight: 300; /* O el peso que mejor coincida */
+  color: #444; /* Ajusta según el color exacto */
+  line-height: 1.2;
+}
+
+.profile-text p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 /*Footer */
 .footer {
-  background-color: #333;
+  background-color: #666240;
   color: #fff;
   padding: 20px 0;
   text-align: center;
   bottom: 0;
-  width: 100%;
+  margin-top: 50px; /* Aumenta este valor según lo necesites */
+  width: 100vw; /* Asegura que ocupe toda la ventana */
+  left: 0; /* Fija al borde izquierdo */
+  right: 0; /* Fija al borde derecho */
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .footer p {
   margin: 5px 0;
   font-size: 14px;
+  color: wheat;
 }
 
 @media (max-width: 768px) {
@@ -259,121 +347,70 @@ nav ul li a {
   }
 }
 
-/*Profile */
-.profile-container {
-  display: flex;
-  align-items: stretch; /* Ambos elementos tendrán la misma altura */
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px; /* Si no quieres padding, puedes quitarlo */
-}
-
-.profile-image {
-  flex: 1; /* La imagen y el texto ocupan el mismo espacio horizontal */
-  display: flex;
-  align-items: stretch; /* Asegura que la imagen se estire verticalmente */
-}
-
-.profile-image img {
-  width: 100%; /* Asegura que la imagen se ajuste horizontalmente */
-  height: 100%; /* Hace que la imagen ocupe toda la altura disponible */
-  object-fit: cover; /* Ajusta la imagen sin deformarla */
-  border-radius: 0; /* Elimina bordes redondeados si los hay */
-}
-
-.profile-text {
-  flex: 1; /* Ambos elementos ocupan el mismo espacio horizontal */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centra verticalmente el texto */
-  margin-left: 20px; /* Ajusta el margen según tu diseño */
-}
-
-/* Define la animación */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Aplica la animación a la imagen */
-.profile-image img {
-  animation: fadeIn 1s ease-in-out;
-  opacity: 0; /* Asegura que inicie invisible */
-  animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
-}
-
-/* Elimina el fondo y el borde */
-.profile-container {
-  background-color: transparent; /* Quita el fondo */
-  border: none; /* Quita el borde */
-  box-shadow: none; /* Quita cualquier sombra */
-}
-
-.profile-text h1 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.profile-text p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-/*Cards index*/
-.card-container {
+.social-icon {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  position: relative;
+  margin: 10px 5px;
   flex-wrap: wrap;
 }
 
-.card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  max-width: 150px;
-  transition: transform 0.3s ease-in-out;
+.icon-elem {
+  list-style: none;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.icon {
+  color: white;
+  font-size: 32px;
+  display: inline-block;
+  margin: 0 10px;
+  transition: 0.5s;
 }
 
-.card-image img {
-  width: 100%;
-  height: auto;
-  display: block;
+.icon:hover {
+  transform: translateY(-10px);
 }
 
-.card h3 {
-  font-size: 1.2rem;
-  color: #ff6f00;
-  margin-bottom: 10px;
-}
+/* Responsividad */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    height: auto;
+  }
 
-.card p {
-  font-size: 1rem;
-  color: #555;
+  .profile-image,
+  .profile-text {
+    width: 100%;
+    height: auto;
+  }
+
+  .profile-image img {
+    height: 50vh; /* Reduce la altura de la imagen en móviles */
+  }
+
+  .profile-text {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    padding: 20px;
+  }
 }
 
 /*containerhablamos*/
 .containerhablamos {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   text-align: center;
-  background-color: #efccdb;
+  background-color: #edd7b6;
   padding: 15px;
+  margin-top: 30px;
 }
 
 h1 {
-  color: #333;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #6c5625;
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -381,7 +418,9 @@ h1 {
 
 h2,
 h3 {
-  font-family: "Montserrat", sans-serif; /* Fuente para encabezados */
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .btn {
@@ -400,12 +439,54 @@ h3 {
   background-color: #88a9ff;
 }
 
+/* Consulta box */
+.consulta-container {
+  display: flex;
+  width: 100%;
+  height: 400px; /* Ajusta la altura según lo necesites */
+  margin-top: 30px;
+}
+
+.consulta-box {
+  position: relative;
+  width: 50%; /* Cada tarjeta ocupa la mitad del ancho */
+  overflow: hidden;
+}
+
+.consulta-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.consulta-box:hover img {
+  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+.consulta-text {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px 0;
+}
+
 /* En que areas te puedo ayudar*/
 .areasayuda {
-  font-size: 28px;
-  margin: 20px 0;
-  text-align: center; /* Centra el texto del título */
-  color: #333;
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  color: rgb(107, 78, 14); /* O el color que prefieras */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  margin-top: 20px;
 }
 
 .grid-container {
@@ -416,38 +497,296 @@ h3 {
 }
 
 .grid-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.grid-item:hover .card {
+  transform: rotateY(180deg);
+}
+
+/* Estilos para la parte frontal de la tarjeta */
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  border-radius: 5px;
+  padding: 15px;
 }
 
-.grid-item h3 {
+.card-front {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: rgb(235, 235, 190);
+}
+
+.card-front h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   font-size: 20px;
-  margin-bottom: 15px;
-  color: #333;
+  color: #5a5a5a;
+  margin-bottom: 10px;
 }
 
-.grid-item p {
+.card-front p {
   font-size: 16px;
   color: #666;
-  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
-.btn {
-  .btn,
-  .contact-btn {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
+/* Estilos para la parte trasera de la tarjeta */
+.card-back {
+  background-color: #d8d5ca; /* Color suave */
+  transform: rotateY(180deg);
+}
+
+.card-back img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.card-back .btn {
+  display: inline-block;
+  background-color: #a1bba3;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.card-back .btn:hover {
+  background-color: #3b5283;
+}
+
+/* Main gif */
+
+.programando {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita que se desborde contenido */
+}
+
+.programador {
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.texto {
+  position: absolute;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 4px 4px 10px rgba(0, 255, 255, 0.7);
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .texto {
+    font-size: 2rem;
   }
 }
 
-.btn:hover {
-  background-color: #88a9ff;
+/*Proceso */
+
+.proceso-container {
+  display: flex;
+  flex-direction: row; /* Asegura que el título esté arriba y luego los procesos */
+  align-items: center; /* Centra los elementos dentro del contenedor */
+  gap: 40px;
+  flex-wrap: wrap;
+  background-color: #d9d6cf;
+  padding: 20px; /* Agrega espacio alrededor */
+}
+
+.tituloproceso {
+  font-family: "Shafarik", system-ui;
+  font-size: 30px; /* Ajusta según el tamaño exacto */
+  font-weight: 150; /* O el peso que mejor coincida */
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  color: rgb(156, 155, 155); /* O el color que prefieras */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+.proceso {
+  background-color: #f8f9fa; /* Fondo suave */
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.proceso:hover {
+  transform: translateY(-5px);
+}
+
+.icono img {
+  width: 80px; /* Ajusta el tamaño del ícono */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #5a5a5a; /* Gris oscuro suave */
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsividad */
+@media (min-width: 768px) {
+  .proceso-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .proceso {
+    flex: 1;
+  }
 }
 
 /*Contacto*/
+
+.contacto-page {
+  text-align: center;
+  background: #ffffff;
+}
+
+/* 🖼 Imagen de fondo que ocupa el 100% */
+.headercontacto {
+  width: 100%;
+  height: 350px; /* Ajusta la altura según necesites */
+  background: url("/imagenes/contactostones.jpg") no-repeat center center;
+  background-size: cover; /* Para que se vea completa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headercontacto h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #815da8;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  background-color: #eedff2;
+}
+
+.info-box {
+  background: #eedff2;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.consultoriocontacto {
+  width: 100px;
+  height: 100px;
+}
+
+.consultoriodireccion {
+  width: 100px;
+  height: 100px;
+  margin-top: 200px;
+}
+
+.info-box i {
+  font-size: 3rem;
+  color: #815da8;
+}
+
+.info-box h2 {
+  font-family: "Shafarik", system-ui;
+  font-size: 30px; /* Ajusta según el tamaño exacto */
+  line-height: 1.2;
+  color: #5a2d82;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+hr {
+  width: 50%;
+  margin: 10px auto;
+  border: 1px solid #5a2d82;
+}
+
+.info-box p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #222222;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .info-box {
+    width: 90%;
+  }
+
+  .headercontacto h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Contacto */
+
 .contact-container {
   display: flex;
   background-color: #ffffff;
@@ -476,6 +815,8 @@ h3 {
 }
 
 .contact-info h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   margin: 10px 0;
   font-size: 20px;
   color: #333;
@@ -485,17 +826,18 @@ h3 {
   margin: 5px 0;
   color: #666;
   font-size: 14px;
+  margin-top: 20px;
 }
 
 .contact-btn {
-  background-color: #ff8a65;
+  background-color: #aa9347;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .contact-btn:hover {
@@ -505,7 +847,7 @@ h3 {
 .social-icons {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .social-icons a {
@@ -523,6 +865,9 @@ h3 {
 }
 
 .contact-form h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   margin-bottom: 20px;
   color: #333;
 }
@@ -576,21 +921,19 @@ h3 {
 /*Sobre mi*/
 /* Asegura que el carrusel no se superponga */
 .carousel {
-  margin-top: 60px; /* Ajusta este valor según la altura de tu header */
+  margin-top: 100px; /* Ajusta este valor según la altura de tu header */
   position: relative;
   z-index: 1; /* Deja el carrusel detrás del header si es necesario */
 }
 
 /*Sobre mí*/
 .carousel-item img {
-  max-height: 500px;
-  object-fit: contain;
-  object-position: center;
-  width: 100%;
+  max-height: 700px;
+  background-size: 600px;
   margin-top: 0; /* Asegúrate de que no haya márgenes extra */
 }
 
-.carousel-control-prev-icon,
+.carousel .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: black; /* Cambia el color de fondo de las flechas a negro */
   background-image: none; /* Elimina la imagen por defecto de Bootstrap para aplicar el color */
@@ -606,18 +949,78 @@ h3 {
   display: inline-block;
 }
 
-.containersobremi {
-  max-width: 900px;
-  margin: 20px auto;
+.sobre-mi {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(209 236 232);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
   padding: 20px;
-  background-color: rgb(246, 246, 241);
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.mi-camino,
-.mi-enfoque {
-  margin-bottom: 40px;
+.contenido {
+  font-family: "Poppins", sans-serif;
+  max-width: 600px;
+}
+
+/* Título */
+.sobre-mi h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sobre-mi p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+/* Comentarios */
+
+.titlecomentarios {
+  font-family: "Shafarik", system-ui;
+  font-size: 60px; /* Ajusta según el tamaño exacto */
+  font-weight: 150; /* O el peso que mejor coincida */
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.comentarios {
+  max-width: 1000px;
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.comentario {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 45%;
+  min-width: 300px;
+  opacity: 0;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+.comentario.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+.autor {
+  font-weight: bold;
+  margin-top: 10px;
+}
+.categoria {
+  color: red;
+  font-size: 14px;
 }
 
 /*Servicios*/
@@ -626,35 +1029,43 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f0faf5; /* Color de fondo suave */
+  background-color: rgb(209 236 232); /* Color de fondo suave */
   padding: 20px;
   border-radius: 8px;
+  margin-top: 60px;
 }
 
 .service-content {
-  width: 60%;
+  width: 80%;
 }
 
 .service-content h2 {
-  font-size: 2rem;
-  color: #000;
+  font-family: "Shafarik", system-ui;
+  font-size: 50px; /* Ajusta según el tamaño exacto */
+  font-weight: 300; /* O el peso que mejor coincida */
+  color: #444; /* Ajusta según el color exacto */
+  line-height: 1.2;
 }
 
 .service-content p {
+  font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #333;
+  color: #222222;
 }
 
 .service-image {
   width: 35%;
   text-align: right;
+  margin-top: 50px;
 }
 
 .service-image img {
   max-width: 100%;
   border-radius: 8px;
   object-fit: cover;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
 }
 
 .quote-section {
@@ -664,6 +1075,8 @@ h3 {
 }
 
 .quote-section h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   font-size: 2.5rem;
   color: #8b5a57; /* Color marrón suave */
   font-weight: bold;
@@ -698,7 +1111,8 @@ h3 {
   align-items: flex-start;
   justify-content: space-between;
   padding: 40px;
-  background-color: #fde3d9; /* Fondo color melocotón claro */
+  background-color: #dbd9a5; /* Fondo color melocotón claro */
+  margin-top: 20px;
 }
 
 .benefits-content {
@@ -707,22 +1121,26 @@ h3 {
 }
 
 .benefits-content h1 {
-  font-size: 2.2rem;
-  color: #000;
-  margin-bottom: 20px;
+  font-family: "Shafarik", system-ui;
+  font-size: 50px; /* Ajusta según el tamaño exacto */
+  font-weight: 300; /* O el peso que mejor coincida */
+  color: #444; /* Ajusta según el color exacto */
+  line-height: 1.2;
 }
 
 .benefits-list h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   font-size: 1.8rem;
-  color: #000;
+  color: #302e2e;
   margin-top: 20px;
 }
 
 .benefits-list p {
+  font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #333;
-  margin-bottom: 20px;
+  color: #222222;
 }
 
 .benefits-image-container {
@@ -781,7 +1199,6 @@ h3 {
   color: #333;
   padding: 20px;
   border-radius: 10px;
-  
 }
 
 .fase {
@@ -791,7 +1208,7 @@ h3 {
   text-align: center;
   background: #ffffff;
   transition: transform 0.3s ease;
-  margin-top: 80px;
+  margin-bottom: 30px;
 }
 .fase:hover {
   transform: scale(1.05);
@@ -823,14 +1240,13 @@ h3 {
 /*Contacto*/
 
 .map-container {
-  margin-top: 20px;
   text-align: center;
 }
 
 .map-container iframe {
   width: 100%;
-  max-width: 600px;
-  height: 450px;
+  max-width: 500px;
+  height: 250px;
   border-radius: 10px;
   border: 1px solid #ddd;
 }
@@ -901,22 +1317,6 @@ h3 {
     margin: 5px 0;
   }
 
-  /* Perfil: cambio de diseño */
-  .profile-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .profile-image img {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .profile-text {
-    margin: 0;
-  }
-
   /* Tarjetas */
   .card-container {
     flex-direction: column;
@@ -959,7 +1359,13 @@ h3 {
   h1,
   h2,
   h3 {
-    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700; /* Puedes ajustar el peso de la fuente según lo necesites */
+  }
+
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400; /* Puedes ajustar el peso de la fuente según lo necesites */
   }
 
   p {
@@ -969,6 +1375,7 @@ h3 {
   .btn {
     font-size: 14px;
     padding: 8px 15px;
+    margin-top: 20px;
   }
 
   .whatsapp-fixed-container {
@@ -1000,7 +1407,6 @@ button,
 /* Efecto hover */
 button:hover,
 .btn:hover {
-  background-color: #45a049; /* Color más oscuro */
   transform: scale(1.05); /* Aumenta ligeramente el tamaño */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
@@ -1057,6 +1463,8 @@ a.btn:hover {
 }
 
 .content h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   font-size: 1.8em;
   margin-bottom: 20px;
   color: #333;
@@ -1069,43 +1477,79 @@ a.btn:hover {
   margin: 0;
 }
 
-/* Curso Container */
-.course-container {
-  max-width: 800px;
-  margin: 30px auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+
+/* Producto */
+
+.product-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
 }
 
-.course-container h2 {
-  color: #4caf50;
-  margin-bottom: 10px;
+.product-image img {
+  width: 100%;
+  border-radius: 10px;
+  height: 400px;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
 }
 
-.course-container p {
-  margin: 10px 0;
-  line-height: 1.6;
+.product-details {
+  max-width: 500px;
 }
 
-.course-container .btn {
-  background-color: #4caf50;
+h1 {
+  font-size: 28px;
+  color: #6d54a2;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.shipping-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.shipping-info a {
+  color: #6d54a2;
+  text-decoration: underline;
+}
+
+.buy-now {
+  background-color: #8661c1;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 250px;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.course-container .btn:hover {
-  background-color: #45a049;
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.buy-now:hover {
+  background-color: #6d54a2;
 }
+
+.product-description {
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
 
 /* Main Content */
 main {
@@ -1118,6 +1562,8 @@ main {
 }
 
 main h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   margin-bottom: 20px;
   color: #4caf50;
 }
@@ -1162,6 +1608,10 @@ main button:hover {
   }
 
   header h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 1.5em;
   }
 
@@ -1172,126 +1622,6 @@ main button:hover {
   }
 }
 
-/*Metodos de pago /*
-/* Contenedor principal del formulario */
-#payment-form {
-  display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
-  gap: 15px; /* Espaciado entre los elementos */
-  max-width: 400px; /* Ajusta el ancho del formulario */
-  margin: 0 auto; /* Centra el formulario horizontalmente */
-}
-
-/* Etiquetas del formulario */
-#payment-form label {
-  font-size: 1rem;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-/* Campos de entrada */
-#payment-form input {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
-}
-
-/* Botón de pago */
-#payment-form button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#payment-form button:hover {
-  background-color: #45a049;
-}
-
-/* Métodos de pago */
-.payment-methods-container {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.payment-methods-container h2 {
-  color: #4caf50;
-  margin-bottom: 20px;
-}
-
-.payment-methods {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.method {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  width: 150px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.method img {
-  width: 80px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.method p {
-  font-size: 16px;
-  color: #333;
-  margin: 0;
-}
-
-.method:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-color: #4caf50;
-}
-
-/* Método seleccionado */
-.method.selected {
-  border: 2px solid #4caf50;
-  background-color: #f0f8ff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Botón regresar */
-.btn {
-  margin-top: 20px;
-  background-color: #ff8a65;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.btn:hover {
-  background-color: #45a049;
-}
-
 /* Estilo del contenedor principal */
 .journaling {
   display: grid;
@@ -1299,18 +1629,32 @@ main button:hover {
   gap: 20px;
   background-color: #f8f1cf;
   padding: 20px;
-  margin-top: 80px; /* Ajusta este valor según la altura de tu header */
+  margin-top: 20px; /* Ajusta este valor según la altura de tu header */
 }
 
 .journaling-content {
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.journaling-title {
+  font-family: "Shafarik", system-ui;
+  font-size: 30px; /* Ajusta según el tamaño exacto */
+  line-height: 1.2;
+}
+
 .journaling-content h2 {
-  font-size: 24px;
+  font-family: "Shafarik", system-ui;
+  font-size: 64px; /* Ajusta según el tamaño exacto */
+  font-weight: 300; /* O el peso que mejor coincida */
+  color: #444; /* Ajusta según el color exacto */
+  line-height: 1.2;
   margin-bottom: 10px;
+  text-align: center;
   color: #333;
 }
 
@@ -1323,7 +1667,7 @@ main button:hover {
 .journaling-content .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -1339,6 +1683,9 @@ main button:hover {
   opacity: 0; /* Inicialmente invisible */
   transform: scale(0.9); /* Imagen ligeramente reducida */
   animation: fadeIn 4s ease-in-out forwards; /* Animación de 2 segundos */
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 80px;
 }
 
 /* Animación para hacer que la imagen aparezca */
@@ -1352,3 +1699,127 @@ main button:hover {
     transform: scale(1); /* Tamaño normal */
   }
 }
+
+/* Journaling */
+
+/* Estilos generales */
+/* Estilos generales */
+.journaling-body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.journaling-header {
+  background-color: #f8f1cf;
+  color: rgb(26, 25, 25);
+  padding: 20px;
+  text-align: center;
+}
+
+.journal-body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.journal-header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.journal-title {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.journal-main {
+  padding: 20px;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  max-width: none; /* Elimina cualquier límite de ancho máximo */
+  margin: 0; /* Elimina márgenes que puedan centrar el contenido */
+}
+
+.beneficio {
+  background-color: #f8f1cf;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ocupa todo el ancho disponible */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  max-width: none; /* Elimina cualquier límite de ancho máximo */
+}
+
+.beneficio p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4d4a4a;
+}
+
+/* Metodos pago */
+
+.container {
+  background: #f8f1cf;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.payment-options, .delivery-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+.card, .circle {
+  background: #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+.card:hover, .circle:hover, .selected {
+  background: #bbb;
+}
+.circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.hidden {
+  display: none;
+}
+button {
+  background: #0c0c0c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+

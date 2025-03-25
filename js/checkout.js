@@ -104,3 +104,38 @@ mercadopago.preferences
   .catch((error) => {
     console.error(error);
   });
+
+/* Comentarios */
+
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("JS cargado correctamente"); // Para verificar si el script se ejecuta
+
+  const comentariosContainer = document.querySelector(".comentarios");
+  if (!comentariosContainer) {
+      console.error("No se encontró la sección de comentarios.");
+      return; // Evita que el script falle si la sección no existe
+  }
+
+  const comentarios = document.querySelectorAll(".comentario");
+
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              comentarios.forEach((comentario, index) => {
+                  setTimeout(() => {
+                      comentario.classList.add("mostrar");
+                  }, index * 1000); // 1 segundo entre cada comentario
+              });
+              observer.disconnect(); // Evita que se vuelva a ejecutar
+          }
+      });
+  }, { threshold: 0.2 });
+
+  observer.observe(comentariosContainer);
+});
+
+console.log("checkout.js está cargado");
+
+
+
+

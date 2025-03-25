@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psicoconvivi</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family:Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Shafarik&display=swap" rel="stylesheet">
+</head>
   <body>
     <header>
       <div class="logo">
-        <img src="./imagenes/logo.png" alt="logo">
-        <h1>Psicoconvivi</h1>
+        <img src="./imagenes/logopsicoconvivi.png" alt="logo">
       </div>
       <input type="checkbox" id="menu-toggle" class="menu-toggle">
       <label for="menu-toggle" class="menu-icon">☰</label>
@@ -31,103 +35,213 @@
             </ul>
           </li>
           <li><a href="./pages/contacto.html">Contacto</a></li>
-          <li><a href="./pages/curso.html">Curso</a></li>
+          <li><a href="./pages/curso.html">Journaling</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <div class="profile-container">
-        <div class="profile-image">
-          <img src="./imagenes/profile-image.jpg" alt="Perfil Psicoconvivi">
+    <section class="profile-container">
+      <div class="profile-image">
+          <img src="/imagenes/profile-image.jpg" alt="Victoria Velázquez">
+      </div>
+      <div class="profile-text">
+          <h1>Psicóloga Victoria Velázquez</h1>
+          <p>Desde mis comienzos en la psicología, me apasionaba observar a las personas y su relación con el mundo. De alguna forma, esa inquietud me llevó a desarrollar mi rol profesional hacia la psicología clínica, desde una intervención lo más cercana y humana posible en los conflictos y las relaciones en la persona.</p>      </div>
+  </section>
+
+
+  <section class="consulta-container">
+    <div class="consulta-box">
+        <img src="/imagenes/consultorio.jpg" alt="Consulta Presencial">
+        <div class="consulta-text">CONSULTA PRESENCIAL</div>
+    </div>
+    <div class="consulta-box">
+        <img src="/imagenes/consultaonlline.avif" alt="Consulta Online">
+        <div class="consulta-text">CONSULTA ONLINE</div>
+    </div>
+</section>
+
+<div class="containerhablamos">
+  <h1>Comienza hoy mismo el camino hacia el bienestar</h1>
+  <a href="/pages/contacto.html" class="btn">¿Hablamos?</a>
+</div>
+
+  <h2 class="areasayuda">¿En qué áreas puedo ayudarte?</h2>
+  <div class="grid-container">
+    <div class="grid-item">
+      <div class="card">
+        <div class="card-front">
+          <h3>Ansiedad</h3>
+          <p>La ansiedad es una respuesta natural del cuerpo ante el estrés...</p>
         </div>
-        <div class="profile-text">
-          <h1>Hola, soy Victoria Velazquez</h1>
-          <p>
-            Soy Victoria Velázquez, psicóloga especializada en el tratamiento de adicciones y en el enfoque comunitario. Mi experiencia profesional se ha centrado en ayudar a personas que enfrentan desafíos relacionados con las adicciones, tanto a nivel individual como grupal, trabajando con familias y comunidades.
-    
-            A lo largo de mi carrera, he participado en proyectos socioeducativos que apoyan a niños, adolescentes y familias que lidian con problemas de adicción, brindando un acompañamiento integral basado en el respeto, la empatía y la confianza. Además, he desarrollado intervenciones grupales y familiares, ofreciendo un espacio seguro para explorar emociones y promover el bienestar psicológico.
-          </p>
+        <div class="card-back">
+          <img src="/imagenes/ansiedad.jpg" alt="Ansiedad">
+          <a href="./pages/ansiedad.html" class="btn">Más información</a>
         </div>
       </div>
-    </main>
-    
-
-    
-    <div class="card-container">
-        <div class="card">
-            <div class="card-image">
-                <img src="/imagenes/terapiaweb.png" alt="Terapia hogar">
-            </div>
-            <div class="card-content">
-                <h2>Terapia online</h2>
-                <p>Por zoom desde la comodidad de tu hogar</p>
-            </div>
+    </div>
+  
+    <div class="grid-item">
+      <div class="card">
+        <div class="card-front">
+          <h3>Depresión</h3>
+          <p>La depresión puede sentirse como un peso que dificulta las actividades cotidianas...</p>
         </div>
-
-        
-
-        <div class="card">
-            <div class="card-image">
-                <img src="/imagenes/terapiapresencial.png" alt="Terapia presencial">
-            </div>
-            <div class="card-content">
-                <h2>Terapia presencial</h2>
-                <p>En mi consultorio</p>
-            </div>
+        <div class="card-back">
+          <img src="/imagenes/depression.jpg" alt="Depresión">
+          <a href="./pages/depresion.html" class="btn">Más información</a>
         </div>
+      </div>
+    </div>
+  
+    <div class="grid-item">
+      <div class="card">
+        <div class="card-front">
+          <h3>Traumas</h3>
+          <p>Los traumas pueden dejar cicatrices profundas...</p>
+        </div>
+        <div class="card-back">
+          <img src="/imagenes/Trauma.jpg" alt="Traumas">
+          <a href="./pages/traumas.html" class="btn">Más información</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item">
+      <div class="card">
+        <div class="card-front">
+          <h3>Problemas de conducta</h3>
+          <p>Las dificultades de conducta pueden tener un gran impacto en la vida diaria...</p>
+        </div>
+        <div class="card-back">
+          <img src="/imagenes/problemaconducta.jpg" alt="Problemas de conducta">
+          <a href="./pages/problemasconducta.html" class="btn">Más información</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item">
+      <div class="card">
+        <div class="card-front">
+          <h3>Autoestima</h3>
+          <p>La autoestima es la valoración que una persona tiene de sí misma</p>
+        </div>
+        <div class="card-back">
+          <img src="/imagenes/autoestima.jpg" alt="TDAH">
+          <a href="./pages/tdah.html" class="btn">Más información</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item">
+      <div class="card">
+        <div class="card-front">
+          <h3>Problemas de socialización</h3>
+          <p>Las dificultades para interactuar socialmente pueden causar aislamiento...</p>
+        </div>
+        <div class="card-back">
+          <img src="/imagenes/socializacion.jpg" alt="Problemas de socialización">
+          <a href="./pages/problemassocializacion.html" class="btn">Más información</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="proceso-container">
+    <div class="tituloproceso">
+        <h2>Nuestro proceso</h2>
     </div>
 
-    <div class="containerhablamos">
-      <h1>Comienza hoy mismo el camino hacia el bienestar</h1>
-      <a href="/pages/contacto.html" class="btn">¿Hablamos?</a>
-  </div>
+  <div class="proceso">
+    <div class="icono">
+        <img src="/imagenes/proceso1.png" alt="proceso" />
+    </div>
+    <h3>Valoración gratuita</h3>
+    <p>
+      Hablamos por teléfono y realizamos una entrevista para conocer tu situación y ver cómo podemos ayudarte. Te asesorarmos con tu problema, e indicaremos el mejor tratamiento y psicólogo para ti.
+    </p>
+</div>
 
-    <h2 class="areasayuda">¿En qué áreas puedo ayudarte?</h2>
-    <div class="grid-container">
-      <div class="grid-item">
-          <h3>Ansiedad</h3>
-          <p>La ansiedad es una respuesta natural del cuerpo ante el estrés. Sin embargo, cuando se convierte en un problema constante, puede afectar tu calidad de vida. Trabajaremos juntos para identificar las causas y brindarte herramientas para gestionar y reducir los síntomas de manera efectiva.</p>
-          <a href="./pages/ansiedad.html" class="btn">Más información</a>
-      </div>
-      <div class="grid-item">
-          <h3>Depresión</h3>
-          <p>La depresión puede sentirse como un peso que dificulta las actividades cotidianas. En terapia, te ofrezco un espacio seguro para explorar tus emociones y encontrar formas de superar este estado, recuperando poco a poco tu bienestar emocional..</p>
-          <a href="./pages/depresion.html" class="btn">Más información</a>
-      </div>
-      <div class="grid-item">
-          <h3>Traumas</h3>
-          <p>Los traumas pueden dejar cicatrices profundas que afectan cómo te relacionas con el mundo. A través de un abordaje sensible y respetuoso, te ayudaré a procesar esas experiencias para que puedas avanzar hacia una vida más plena y sin las barreras del pasado.</p>
-          <a href="./pages/traumas.html" class="btn">Más información</a>
-      </div>
-      <div class="grid-item">
-          <h3>Problemas de conducta</h3>
-          <p>Las dificultades de conducta, ya sea en niños o adultos, pueden tener un gran impacto en la vida diaria. Trabajaremos juntos para entender los comportamientos problemáticos y desarrollar estrategias que promuevan cambios positivos y sostenibles.</p>
-          <a href="./pages/problemasconducta.html" class="btn">Más información</a>
-      </div>
-      <div class="grid-item">
-          <h3>TDAH</h3>
-          <p>El Trastorno por Déficit de Atención e Hiperactividad puede dificultar la concentración y el control de impulsos. A través de un enfoque personalizado, te ayudaré a mejorar la atención y reducir las conductas impulsivas, facilitando una vida más equilibrada.</p>
-          <a href="./pages/tdah.html" class="btn">Más información</a>
-      </div>
-      <div class="grid-item">
-          <h3>Problemas de socialización</h3>
-          <p>Las dificultades para interactuar socialmente pueden causar sentimientos de aislamiento y baja autoestima. Mi objetivo es ayudarte a desarrollar habilidades sociales y confianza, para que puedas establecer relaciones más saludables y satisfactorias.</p>
-          <a href="./pages/problemassocializacion.html" class="btn">Más información</a>
-      </div>
-  </div>
+<div class="proceso">
+    <div class="icono">
+        <img src="/imagenes/proceso2.png" alt="proceso" />
+    </div>
+    <h3>Diagnóstico clínico</h3>
+    <p>
+      Ya en terapia, tu psicólogo analizará tanto tu problema como sus causas y diseñará una intervención a medida. Podrás comprender lo que te ocurre, qué necesitas y cómo trabajaréis juntos para sentirte mejor.
+    </p>
+</div>
+
+<div class="proceso">
+    <div class="icono">
+        <img src="/imagenes/proceso3.png" alt="proceso" />
+    </div>
+    <h3>Intervención terapéutica</h3>
+    <p>
+      Tu terapeuta aplicará las mejores técnicas para tratar tu caso. Notarás mejoras en tus síntomas y practicarás nuevas habilidades (emocionales, mentales, conductuales), tanto en sesión como fuera.
+    </p>
+</div>
+
+<div class="proceso">
+    <div class="icono">
+        <img src="/imagenes/proceso4.png" alt="proceso" />
+    </div>
+    <h3>Seguimiento de avances</h3>
+    <p>
+      El profesional se asegurará de que el tratamiento está funcionando. Analizará la calidad de tus cambios: serenidad mental y emocional, práctica de nuevos patrones de afrontamiento, etc.
+    </p>
+</div>
+</div>
+
+  <div class="programando">
+    <img class="programador" src="/imagenes/maingif1.gif" alt="Programador">
+    <div class="texto">Te ayudo a afrontar tus dificultades y sus causas para que los cambios perduren en ti.</div>
+</div>
+
+<h1 class="titlecomentarios">Comentarios</h1>
+
+<div class="comentarios" id="comentarios">
+    <div class="comentario">
+        <p>"Lucía es una excelente profesional, sabe acompañarte en tu proceso de trabajo personal sin invadir tu espacio ni generar dependencia emocional."</p>
+        <p class="autor">Mercedes, 40 años, terapeuta y formadora</p>
+        <p class="categoria">Terapia para psicólogos</p>
+    </div>
+    <div class="comentario">
+        <p>"Si necesitas ayuda, creo que es de lo mejorcito que te puedes encontrar en Madrid. Con mi terapeuta me vienen palabras como respeto, confianza, cuidado y escucha."</p>
+        <p class="autor">Jorge, 41 años, project manager</p>
+        <p class="categoria">Psicoterapia</p>
+    </div>
+    <div class="comentario">
+        <p>"Con Lucía hay tantos frutos: he crecido en autonomía, he mejorado la relación conmigo misma y con los que me rodean."</p>
+        <p class="autor">Amalia, 43 años, psicoterapeuta</p>
+        <p class="categoria">Terapia para psicólogos</p>
+    </div>
+    <div class="comentario">
+        <p>"Sin duda alguna, comenzar un proceso terapéutico con Lucía es una de las mejores decisiones que he tomado en mi vida."</p>
+        <p class="autor">Javier, 30 años, informático</p>
+        <p class="categoria">Psicoterapia</p>
+    </div>
+    <div class="comentario">
+        <p>"Mi experiencia con mi psicóloga fue buena y divertida, aunque al principio me costó un poco. Lo bueno era que podías contarle lo que quisieras y no pasaba nada."</p>
+        <p class="autor">Miguel, 12 años, estudiante</p>
+        <p class="categoria">Terapia infantil</p>
+    </div>
+</div>
+
+
 
   <div class="journaling">
     <div class="journaling-content">
         <h2>Journaling</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At mollitia odio tempore recusandae ducimus nesciunt, atque expedita. Distinctio asperiores ad numquam quia voluptatem provident, molestias vel reprehenderit consequatur, accusamus ullam.</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, eaque corrupti. Et nemo nulla fuga! Nihil adipisci aliquam explicabo, quas dolorum, velit maiores atque vero accusantium vel nostrum cumque earum?</p>
+        <p>¿Alguna vez has sentido que tus pensamientos están dispersos, que las emociones te abruman o que simplemente necesitas un espacio para entenderte mejor? El journaling, o escritura terapéutica, es una herramienta poderosa avalada por la psicología para ayudarte a conectar contigo mismo, gestionar tus emociones y mejorar tu bienestar mental.</p>
         <a href="./pages/curso.html" class="btn">Journaling</a>
     </div>
     <div class="journaling-image">
-        <img src="../imagenes/journaling.avif" alt="Journaling" class="visible-image">
+        <img src="/imagenes/Journaling.jpg" alt="Journaling" class="visible-image">
     </div>
 </div>
+
 
 
   <div class="contact-container">
@@ -150,7 +264,6 @@
               </a>
             </div>
     <div class="contact-form">
-        <h2>Enviame tu informacion y me pondré en contacto contigo lo antes posible</h2>
         <form action="#" method="post">
             <div class="form-row">
                 <div class="form-group">
@@ -181,6 +294,29 @@
     </div>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const comentarios = document.querySelectorAll(".comentario");
+      let activado = false;
+
+      function mostrarComentarios() {
+          const seccion = document.getElementById("comentarios");
+          const rect = seccion.getBoundingClientRect();
+
+          if (rect.top < window.innerHeight && !activado) {
+              activado = true;
+              comentarios.forEach((comentario, index) => {
+                  setTimeout(() => {
+                      comentario.classList.add("mostrar");
+                  }, index * 1000); // Diferencia de 1s entre cada comentario
+              });
+          }
+      }
+      
+      window.addEventListener("scroll", mostrarComentarios);
+  });
+</script>
+
 <div class="whatsapp-fixed-container">
   <span>Pide cita</span>
   <a href="https://wa.me/59898425520" target="_blank" class="whatsapp-button">
@@ -192,11 +328,39 @@
 
 
 <footer class="footer">
+  <ul class="social-icon">
+    <li class="icon-elem">
+      <a href="https://www.instagram.com/psicoconvivi" class="icon">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="https://wa.me/59898425520" class="icon">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </a>
+    </li>
+    <li class="icon-elem">
+      <a href="https://www.linkedin.com/in/maria-victoria-velazquez-silva" class="icon">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+    </li>
+  </ul>
   <div class="footer-content">
       <p>Consultorio Psicológico - Psicoconvivi</p>
       <p>Dirección: Calle Falsa 123, Ciudad, País</p>
       <p>Teléfono: 099123456</p>
   </div>
 </footer>
+
+
+<script src="js/checkout.js"></script>
+<script
+type="module"
+src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+nomodule
+src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+></script>
   </body>
 </html>
